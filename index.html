@@ -13,6 +13,7 @@
         *{
    margin: 0;
    padding: 0; 
+   border-color: rgba(124, 133, 133, 0.24);
 }
 .fundo{
     background-image: linear-gradient(45deg,black,rgb(203, 187, 187)); /*ficou degrade mas so na parte do meio p cima*/
@@ -23,38 +24,43 @@
 }
 .calculadora{
     position: absolute;
-    background-color: black;
+    background-color: rgb(85, 83, 83);
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 15px;
     padding: 15px;
+    border: 3px solid #242222; /* Cor da borda */
 }
+    
 .botao{
     width: 50px; 
     height: 50px;
-   font-size: 25px;
+   font-size: 26px;
    cursor: pointer;
    margin: 3px; /*distancia entre eles*/ 
    background-color: rgb(31,31,31);
-   border-radius:50%;
+   border-radius: 50px;
    color: #fff;
+   border-color: 2px solid #5e5e5e;
 
 }
 .botao:hover{
-    background-color: rgb(120, 116, 116);
+    background-color: rgb(105, 105, 105);
 }
 #resultado{
     background-color: white;
-    width: 210px;
-    height: 30px;
-    margin: 5px;
+    width: 218x; /*largura*/
+    height: 25px; /*altura*/
+    margin: 5px; /*margem*/
     font-size: 25px;
     color: black;
-    text-align: right;
-    padding: 5px;
-    overflow: hidden;
+    text-align: right; /*alinhamento texto*/
+    padding: 5px; /*preenchimento*/
+    overflow: hidden;/* n dx resultado passar do limite*/
+    border:  2px solid #141414;
 }
+
     </style>
 <body>
     <div class="fundo">
@@ -86,10 +92,10 @@
                 <td><button class="botao" onclick="insert('1')">1</button></td>
                 <td><button class="botao" onclick="insert('2')">2</button></td>
                 <td><button class="botao" onclick="insert('3')">3</button></td>
-                <td rowspan="2"><button class="botao" style="height: 106px;"onclick="calcular()">=</button> </button></td>
+                <td rowspan="2"><button class="botao" style="height: 106px; border-radius: 47px;"onclick="calcular()">=</button> </button></td>
             </tr>
             <tr>
-                <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
+                <td colspan="2"><button class="botao" style="width: 106px; border-radius: 45px;" onclick="insert('0')">0</button></td>
                     <td><button class="botao" onclick="insert('.')">.</button></td> 
             </tr>
         </table>
@@ -97,7 +103,6 @@
 
      
 
-</div>
 </div>
 <script>
         function insert(num)
@@ -125,6 +130,7 @@
             {
                 document.getElementById('resultado').innerHTML = "Nada..."
             }
-        }</script>
+        }
+        </script>
 </body>
 </html>
